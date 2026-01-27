@@ -1,0 +1,10 @@
+-- ===========================================================================================
+-- 02_finding_users_total_overall_events.sql 
+-- Purpose: Getting baseline numbers for user engagement        
+-- Input: events_cleaned table 
+-- Output: Total number of actions (view, cart, purchase) per user  
+-- ===========================================================================================
+
+SELECT user_id,  COUNT(event_type) AS "total_number_of_events",
+FROM events_cleaned
+GROUP BY user_id
