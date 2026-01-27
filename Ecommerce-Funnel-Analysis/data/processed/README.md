@@ -12,7 +12,7 @@ Raw events data (not included due to size)
 → 'events_cleaned' (not included due to size, reproduceable via SQL) 
 → 'events_flags.csv' 
 → 'funnel_progression.csv'
-→ 'stalled_users.csv'
+→ 'stalled_users_funnel.csv'
 → R Visualizations and proportions analysis
 
 ## File Descriptions 
@@ -22,6 +22,6 @@ User-level dataset indicating whether each user viewed, added to cart, or purcha
 `funnel_progression.csv`
 Aggregated funnel metrics used to analyze user progression through view → cart → purchase stages
 
-`stalled_users.csv`
+`stalled_users_funnel.csv`
 Summary dataset identifying users who stalled at specific funnel stages (such as view-only, cart-no-purchase) 
 
