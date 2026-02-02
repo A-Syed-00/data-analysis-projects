@@ -14,8 +14,13 @@
 DROP TABLE IF EXISTS events_cleaned; 
 -- Create cleaned table 
 CREATE TABLE events_cleaned  AS
-SELECT event_time, user_id, product_id, user_session, event_type
-FROM events_raw
+SELECT 
+  event_time, 
+  user_id, 
+  product_id, 
+  user_session, 
+  event_type
+FROM events_raw;
 
 --Optional
 -- Check for null values: 
