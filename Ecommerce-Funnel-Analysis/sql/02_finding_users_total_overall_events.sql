@@ -4,7 +4,10 @@
 -- Input: events_cleaned table 
 -- Output: Total number of actions (view, cart, purchase) per user  
 -- ===========================================================================================
+DROP TABLE IF EXISTS user_total_events; 
 
-SELECT user_id,  COUNT(event_type) AS "total_number_of_events",
+CREATE TABLE user_total_events AS 
+SELECT user_id,  
+  COUNT(event_type) AS total_number_of_events
 FROM events_cleaned
 GROUP BY user_id
