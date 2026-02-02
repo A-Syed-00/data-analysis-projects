@@ -9,6 +9,9 @@
 --             - user_session and event_time can be NULL at this stage
 -- ===========================================================================================
 
+
+-- Drop table if it aleady exists (for reproducibility) 
+DROP TABLE IF EXISTS events_cleaned; 
 -- Create cleaned table 
 CREATE TABLE events_cleaned  AS
 SELECT event_time, user_id, product_id, user_session, event_type
