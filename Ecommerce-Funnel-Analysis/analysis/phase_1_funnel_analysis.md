@@ -21,7 +21,7 @@ rather than session-level behavior (events a user completes during a single webs
 
 ### Key Variables 
  - `user_id` : Numeric unique identifier for each user
- - `event_type`: Type of interaction (`view`, `cart', `purchase`)
+ - `event_type`: Type of interaction (`view`, `cart`, `purchase`)
  - `product_id`: Identifier for the product interacted with
  - 'event_time`: Time that the event occured (timestamp in this format YYYY-MM-DD HH:MM:SS UTC)
 
@@ -33,5 +33,48 @@ Each funnel stage is defined by the following event types:
 For this analysis, a user is considered to have completed the funnel if they made at least one purchase, even if intermediate steps were skipped.
 
 ### Data Cleaning & Assumptions 
+
+ - Rows were required to have values for `user_id`, `product_id`, and `event_type` to be included for analysis.
+ - Rows with missing `user_session` values were retained since analysis focuses on events at user-level.
+ - Raw data and some intermediate tables are excluded from the repository due to file size constraints.
+ - All steps are reproduable using the SQL scripts in the `/sql` directory.
+
+
+## Methodology 
+
+### SQL Transformations
+SQL was used to: 
+ - Clean and filter event-level data
+ - Aggregate user activity across the event types
+ - Create binary flags (yes/no) for users reaching a funnel stage
+ - Generate summary tables for funnel progression and stalled users.
+
+### R Propotion Analysis and Visualizations 
+
+### Funnel Definitions
+
+The intermediate tables `events_flags` and `
+
+
+## Key Results 
+
+### Funnel Counts 
+This section summarizes how many users reached each funnel stage. 
+(Reference for Funnel counts → `funnel_progression.csv`) 
+    
+
+Event Type Counts: 
+ - Total users who viewed products: 406,863
+ - Total users who added items to cart: 36,952
+ - Total users who purchased: 21,304
+   
+
+Funnel Counts 
+  - Total users who viewed products: 406,863
+  - Total users who viewed and added to cart: 36,950
+  - Total users who added to cart and purchased: 20,056
+  - Total users who viewed and purchased: 20,884
+  - Total users who completed the funnel: 20,054
+
 
 
